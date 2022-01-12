@@ -2,6 +2,7 @@ package FlightBooking;
 
 import java.io.IOException;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import Resources.Base;
@@ -29,6 +30,18 @@ public class EndToEndTest extends Base{
 	{
 		PurchaseFlightTicketPage.addUserDetails();
 		PurchaseFlightTicketPage.clickPurchaseFlightButton();
+	}
+	
+	@Test(priority = 3)
+	public void confirmBooking()
+	{
+		ConfirmationPage.verifyPurchase();
+	}
+	
+	@AfterTest
+	public void closeBrowser()
+	{
+		Base.getDriver().close();
 	}
 
 }
