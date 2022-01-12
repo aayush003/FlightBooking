@@ -23,5 +23,12 @@ public class EndToEndTest extends Base{
 		ChooseFlightPage.verifyCityText();
 		ChooseFlightPage.chooseFlight();
 	}
+	
+	@Test(priority = 2)
+	public void enterBookingDetails() throws IOException
+	{
+		PurchaseFlightTicketPage.addUserDetails();
+		PurchaseFlightTicketPage.clickPurchaseFlightButton();
+	}
 
 }

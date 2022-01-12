@@ -2,8 +2,11 @@ package Utility;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import Resources.Base;
 
 public class CommonMethods {
 
@@ -33,5 +36,11 @@ public class CommonMethods {
 			}	
 		}
 		return flag;
+	}
+	
+	public static void scrollDownWindow()
+	{
+		JavascriptExecutor js = (JavascriptExecutor)Base.getDriver();
+		js.executeScript("window.scrollBy(0,250)");
 	}
 }
