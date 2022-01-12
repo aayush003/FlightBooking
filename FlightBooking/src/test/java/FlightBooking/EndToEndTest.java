@@ -41,7 +41,7 @@ public class EndToEndTest extends Base{
 	@AfterTest
 	public void closeBrowser()
 	{
-		Base.getDriver().close();
+		Base.getDriver().quit();
 	}
 
 }
