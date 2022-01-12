@@ -23,20 +23,20 @@ public class Base {
 
 		if(browserName.equals("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", "user.dir\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
 			driver.set(new ChromeDriver());
 			Base.getDriver().get(URL);
 			Base.getDriver().manage().window().maximize();
-			Base.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+			Base.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		}
 		else if(browserName.equals("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver", "user.dir\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", ".\\geckodriver.exe");
 			driver.set(new FirefoxDriver());
 			Base.getDriver().get(URL);
 			Base.getDriver().manage().window().maximize();
-			Base.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+			Base.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		}
 		else
 		{
@@ -48,7 +48,7 @@ public class Base {
 	public static String getPropertiesData(String data) throws IOException
 	{
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("user.dir\\data\\data.properties");
+		FileInputStream fis = new FileInputStream(".\\data\\data.properties");
 		prop.load(fis);
 		return prop.getProperty(data);
 	}
